@@ -1,0 +1,24 @@
+class Solution(object):
+    def isAnagram(self, s, t):
+        if len(s) != len(t):
+            return False
+        sdict, tdict = {}, {}
+        for i in range(len(s)):
+            if s[i] in sdict:
+                sdict[s[i]] += 1
+            if t[i] in tdict:
+                tdict[t[i]] += 1
+            sdict[s[i]] = 1
+            tdict[t[i]] = 1
+        for j in sdict:
+            if sdict[s[i]] != tdict[t[i]]:
+                return False
+        return True
+        
+        
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        
