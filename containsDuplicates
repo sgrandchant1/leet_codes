@@ -1,11 +1,12 @@
 class Solution(object):
     def containsDuplicate(self, nums):
+        # could also use a set, which would avoid duplicated. 
+        # seen = set()
         adict = {}
         for i in nums:
             if i in adict:
                 return True
-            else:
-                adict[i] = 1
+            adict[i] = 1
         return False
         
         """
