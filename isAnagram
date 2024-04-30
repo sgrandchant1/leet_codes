@@ -11,6 +11,8 @@ class Solution(object):
             sdict[s[i]] = 1
             tdict[t[i]] = 1
         for j in sdict:
+            if j not in tdict:
+                return False
             if sdict[s[i]] != tdict[t[i]]:
                 return False
         return True
