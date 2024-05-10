@@ -1,0 +1,16 @@
+class Solution(object):
+    def groupAnagrams(self, strs):
+        adict = defaultdict(list)
+        for i in strs:
+            count = [0] * 26 #this is array of 26 zeroes
+            for j in i:
+                count[ord(j) - ord('a')] += 1
+            adict[tuple(count)].append(i)
+        return adict.values()
+
+        """
+        :type strs: List[str]
+        :rtype: List[List[str]]
+        """
+        
+        
