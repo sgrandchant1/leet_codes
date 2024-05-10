@@ -1,0 +1,23 @@
+class Solution(object):
+    def threeSum(self, nums):
+        one = 0
+        two = 1
+        three = 2
+        fin = []
+        while three < len(nums):
+            count = nums[one] + nums[two] + nums[three]
+            if not(count == 0):
+                three += 1
+                continue
+            fin.append([nums[one], nums[two], nums[three]])
+            one += 1
+            two += 1
+            three += 1
+        return fin
+
+
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        
