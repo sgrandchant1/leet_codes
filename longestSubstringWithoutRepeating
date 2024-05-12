@@ -1,0 +1,26 @@
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        # create a set, innit l, r pointers. 
+        # add left pointer to set, check if right pointer is in set
+        # if it is, move left one, adjust right
+        # if not, move right one, increment counter, and add to set. 
+        # do this while l < len of s
+        aset = set()
+        l, r = 0, 0
+        max_count = 0
+
+        while r < len(s):
+            if s[r] not in aset:
+                aset.add(s[r])
+                max_count = max(max_count, r - l + 1)
+                r += 1
+            else:
+                aset.remove(s[l])
+                l += 1
+        return max_count
+
+        """
+        :type s: str
+        :rtype: int
+        """
+        
