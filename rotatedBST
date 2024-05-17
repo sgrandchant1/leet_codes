@@ -1,0 +1,19 @@
+class Solution(object):
+    def findMin(self, nums):
+        r = len(nums) - 1
+        l = 0
+        if l == r:
+            return nums[l]
+
+        m = (r + l) // 2
+
+        if nums[m] > nums[r]:
+            return self.findMin(nums[m + 1: r + 1])   
+        else:
+            return self.findMin(nums[l : m + 1])     
+                
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        
