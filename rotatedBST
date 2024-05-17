@@ -2,11 +2,9 @@ class Solution(object):
     def findMin(self, nums):
         r = len(nums) - 1
         l = 0
+        m = (r + l) // 2
         if l == r:
             return nums[l]
-
-        m = (r + l) // 2
-
         if nums[m] > nums[r]:
             return self.findMin(nums[m + 1: r + 1])   
         else:
